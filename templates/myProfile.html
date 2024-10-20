@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script> <!-- Link to the JavaScript file -->
+    <title>My Profile</title>
+</head>
+
+<body>
+    <main>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="myProfile.html">Profile</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+            <div class="nav-name">
+                <h1>Roots</h1>
+            </div>
+        </nav>
+        <header>
+            <!-- This is the title -->
+            <div class="parent">
+                <h1 class="profileName">Hello, {{account1.getName()}}!</h1>
+            </div>
+        </header>
+
+        <div class="child">
+            
+            <!-- This is the ethnicity/interests tab -->
+            <!-- I will need to add the ethnicity and interests field from the person object -->
+
+            <div class = "userDescriptions">
+            <h3><strong>Community:</strong> {{account1.getCommunity()}}<br><br>
+            <strong>Interests:</strong> {{account1.getInterests()}}</h3>
+            </div>
+
+            <h2>Artifacts</h2>
+            <button class="add-artifact" onclick="goToArtifact()">Add Artifact</button>
+
+
+            <!-- This is the media -->
+            <div class="posts-container">
+            {% for artifact in artifactsList %}
+            <div class="post">
+
+                <h3>{{ artifact.getName() }}</h3>
+                <div class = "imgArtifact">
+                <img src="{{ artifact.getMedia() }}" alt="Artifact Media" style="max-width: 300px;">
+                </div>
+                <p class="comment-box"><strong>Comments:</strong> {{ artifact.getComments() }}</p>
+                <p class="comment-box"><strong>Hashtags:</strong> {{ artifact.getHashtags() }}</p>
+            </div>
+            {% else %}
+                <p>No artifacts added yet.</p>
+                {% endfor %}
+
+            </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Roots. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

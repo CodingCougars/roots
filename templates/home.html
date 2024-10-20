@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Homepage</title>
+</head>
+
+<body>
+    <!-- Ideally, I would like a general bar at the top with the logo/name -->
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <!-- This is the title -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="myProfile.html">Profile</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>            
+            <div class="nav-name">
+                <h1>Roots</h1>
+            </div>
+        </nav>
+        <h1>Home</h1>
+    </header>
+    <main>
+        <div class = "homeFormat">
+        <h3 class = "h3Home">About Us</h3>
+        <p>We’re creating a groundbreaking platform that blends the cultural discovery elements of Ancestry.com with a
+            highly interactive, scrollable user interface, designed to help people explore and share their personal
+            heritage in a deeply engaging way. It’s not just about tracing your family tree—it’s about understanding who
+            you are and where you come from, while connecting with others who share your journey.</p>
+        <p>In an increasingly globalized world, people are seeking to reconnect with their roots and understand their
+            heritage. Whether they’re uncovering lost traditions, learning about ancestral lands, or connecting with
+            distant relatives, this platform gives users the tools to explore their identity in a more meaningful and
+            interactive way than ever before.
+        </p>
+        <h3 class = "h3Home">How to Add Artifacts</h3>
+        <ol>
+            <li>Click on "Profile"</li>
+            <li>Once in the profile section, press the "Add Artifact" button</li>
+            <li>Enter all the fields and click "Add" (this will now be visible on your profile)</li>
+        </ol>
+        <p>Press the community button to explore trending posts and hashtags of your communities or press the home button to see artifacts catered to you!</p>
+     </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Roots. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

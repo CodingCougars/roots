@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script> <!-- Link to the JavaScript file -->
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="myProfile.html">Profile</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+            <div class="nav-name">
+                <h1>Roots</h1>
+            </div>
+        </nav>
+        <h1>Community</h1>
+    </header>
+
+    <main>
+        <section id="food" class="category-section">
+            <h2>Food</h2>
+            <div class="scroll-container">
+                <div class="scroll-items">
+                    <!-- This is the media -->
+                    {% for food in foodList %}
+                    <div class="post">
+
+                        <h3>{{ food.getName() }}</h3>
+                        <img src="{{ food.geturl() }}" alt="Food Media" style="max-width: 300px;">
+                        <p class="comment-box"><strong>Comments:</strong><br>{{ food.getComment() }}</p>
+                        <p class="comment-box"><strong>Hashtags:</strong><br>{{ food.getHashtag() }}</p>
+                    </div>
+                    {% else %}
+                        <p>No artifacts added yet.</p>
+                    {% endfor %}
+
+                    
+                </div>
+            </div>
+            <button class="scroll-right" onclick="scrollRight('food')">&#8594;</button>
+        </section>
+
+        <section id="art" class="category-section">
+            <h2>Art</h2>
+            <div class="scroll-container">
+                <div class="scroll-items">
+                    <!-- This is the media -->
+                    {% for art in artList %}
+                    <div class="post">
+
+                        <h3>{{ art.getName() }}</h3>
+                        <img src="{{ art.geturl() }}" alt="Art Media" style="max-width: 300px;">
+                        <p class="comment-box"><strong>Comments:</strong><br>{{ art.getComment() }}</p>
+                        <p class="comment-box"><strong>Hashtags:</strong><br>{{ art.getHashtag() }}</p>
+                    </div>
+
+                    {% else %}
+                        <p>No artifacts added yet.</p>
+                        {% endfor %}
+
+                    
+                </div>
+            </div>
+
+            <button class="scroll-right" onclick="scrollRight('art')">&#8594;</button>
+        </section>
+
+        <section id="language" class="category-section">
+            <h2>Language</h2>
+                <div class="scroll-container">
+                    <div class="scroll-items">
+                        <!-- This is the media -->
+                        {% for language in languageList %}
+                        <div class="post">
+
+                            <h3>{{ language.getName() }}</h3>
+                            <img src="{{ language.geturl() }}" alt="Language Media" style="max-width: 300px;">
+                            <p class="comment-box"><strong>Comments:</strong><br>{{ language.getComment() }}</p>
+                            <p class="comment-box"><strong>Hashtags:</strong><br>{{ language.getHashtag() }}</p>
+                        </div>
+
+                        {% else %}
+                            <p>No artifacts added yet.</p>
+                            {% endfor %}
+
+                        
+                    </div>
+                </div>
+            </div> <button class="scroll-right" onclick="scrollRight('language')">&#8594;</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Roots. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

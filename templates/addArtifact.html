@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A page where users can add media to their profiles">
+    <title>Add Artifact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script> <!-- Link to the JavaScript file -->    
+</head>
+
+<body>
+
+    <header>
+        <h1>Add Artifact</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form action="/addArtifact.html" method="POST" class="artifact-form">
+                <div class="artifactEntries">
+                    <h3>Name:</h3>
+                    <input type="text" name="name" placeholder="e.g., Mama's Sunday Sauce" required>
+    
+                    <h3>Type:</h3>
+                    <input type="text" name="type" placeholder="Type of media" required>
+    
+                    <h3>Media:</h3>
+                    <input type="text" name="media" placeholder="Media URL" required>
+    
+                    <h3>Comments:</h3>
+                    <textarea name="comments" placeholder="Comments about the artifact" required></textarea>
+    
+                    <h3>Hashtags:</h3>
+                    <input type="text" name="hashtags" placeholder="e.g., #family #heritage" required>
+                </div>
+    
+                <button type="submit" onclick="addArtifact()">Add</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Roots. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
